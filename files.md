@@ -56,7 +56,7 @@ tar_plan(
 
 ``` output
 + some_data dispatched
-✔ some_data completed [0ms, 64 B]
+✔ some_data completed [1ms, 64 B]
 ✔ ended pipeline [104ms, 1 completed, 0 skipped]
 ```
 
@@ -76,7 +76,7 @@ tar_plan(
 
 
 ``` output
-✔ skipped pipeline [61ms, 1 skipped]
+✔ skipped pipeline [59ms, 1 skipped]
 ```
 
 The target `some_data` was skipped, even though the contents of the file changed.
@@ -100,7 +100,7 @@ tar_plan(
 ✔ data_file completed [0ms, 26 B]
 + some_data dispatched
 ✔ some_data completed [0ms, 78 B]
-✔ ended pipeline [143ms, 2 completed, 0 skipped]
+✔ ended pipeline [145ms, 2 completed, 0 skipped]
 ```
 
 This time we see that `targets` does successfully re-build `some_data` as expected.
@@ -192,10 +192,10 @@ The following objects are masked from ‘package:datasets’:
 + penguins_data_raw_file dispatched
 ✔ penguins_data_raw_file completed [1ms, 53.10 kB]
 + penguins_data_raw dispatched
-✔ penguins_data_raw completed [180ms, 10.40 kB]
+✔ penguins_data_raw completed [177ms, 10.40 kB]
 + penguins_data dispatched
 ✔ penguins_data completed [15ms, 1.50 kB]
-✔ ended pipeline [420ms, 3 completed, 0 skipped]
+✔ ended pipeline [409ms, 3 completed, 0 skipped]
 ```
 
 ::::::::::::::::::::::::::::::::::
@@ -275,7 +275,7 @@ tar_plan(
 ✔ hello_caps completed [0ms, 78 B]
 + hello_caps_out dispatched
 ✔ hello_caps_out completed [0ms, 26 B]
-✔ ended pipeline [178ms, 4 completed, 0 skipped]
+✔ ended pipeline [180ms, 4 completed, 0 skipped]
 ```
 
 Take a look at `hello_caps.txt` in the `results` folder and verify it is as you expect.

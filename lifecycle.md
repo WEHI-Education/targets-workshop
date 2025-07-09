@@ -55,7 +55,7 @@ The following objects are masked from ‘package:datasets’:
 
     penguins, penguins_raw
 
-✔ skipped pipeline [68ms, 3 skipped]
+✔ skipped pipeline [69ms, 3 skipped]
 ```
 
 Remember how the first time we ran the pipeline, `targets` printed out a list of each target as it was being built?
@@ -114,7 +114,7 @@ The following objects are masked from ‘package:datasets’:
 
 + penguins_data dispatched
 ✔ penguins_data completed [11ms, 1.50 kB]
-✔ ended pipeline [176ms, 1 completed, 2 skipped]
+✔ ended pipeline [180ms, 1 completed, 2 skipped]
 ```
 
 What happened?
@@ -268,6 +268,15 @@ tar_progress()
 3 penguins_data     completed
 ```
 
+::: callout
+
+Targets also offers some dynamic monitoring tools that you can leave running to monitor long pipelines:
+
+* [`tar_poll`](https://docs.ropensci.org/targets/reference/tar_poll.html) gives a ongoing progress summary in the R terminal
+* [`tar_watch`](https://docs.ropensci.org/targets/reference/tar_watch.html) starts a Shiny app that shows the current output of `tar_visnetwork`
+
+:::
+
 ## Granular control of targets
 
 It is possible to only make a particular target instead of running the entire workflow.
@@ -292,7 +301,7 @@ The following objects are masked from ‘package:datasets’:
 
     penguins, penguins_raw
 
-✔ skipped pipeline [89ms, 3 skipped]
+✔ skipped pipeline [92ms, 3 skipped]
 ```
 
 Let's invalidate `penguins_data` and run it again:

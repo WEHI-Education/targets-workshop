@@ -94,8 +94,8 @@ The following objects are masked from ‘package:datasets’:
     penguins, penguins_raw
 
 + combined_model dispatched
-✔ combined_model completed [48ms, 11.20 kB]
-✔ ended pipeline [171ms, 1 completed, 3 skipped]
+✔ combined_model completed [23ms, 11.20 kB]
+✔ ended pipeline [144ms, 1 completed, 3 skipped]
 ```
 
 Let's have a look at the model. We will use the `glance()` function from the `broom` package. Unlike base R `summary()`, this function returns output as a tibble (the tidyverse equivalent of a dataframe), which as we will see later is quite useful for downstream analyses.
@@ -181,7 +181,7 @@ The following objects are masked from ‘package:datasets’:
     penguins, penguins_raw
 
 + adelie_model dispatched
-✔ adelie_model completed [8ms, 6.48 kB]
+✔ adelie_model completed [7ms, 6.48 kB]
 + gentoo_model dispatched
 ✔ gentoo_model completed [2ms, 5.88 kB]
 + chinstrap_model dispatched
@@ -194,7 +194,7 @@ The following objects are masked from ‘package:datasets’:
 ✔ gentoo_summary completed [3ms, 348 B]
 + chinstrap_summary dispatched
 ✔ chinstrap_summary completed [4ms, 348 B]
-✔ ended pipeline [380ms, 7 completed, 4 skipped]
+✔ ended pipeline [372ms, 7 completed, 4 skipped]
 ```
 
 Let's look at the summary of one of the models:
@@ -297,7 +297,7 @@ The following objects are masked from ‘package:datasets’:
 ✔ penguins_data_grouped completed [6ms, 1.53 kB]
 + species_summary declared [3 branches]
 ✔ species_summary completed [14ms, 1.04 kB]
-✔ ended pipeline [339ms, 5 completed, 3 skipped]
+✔ ended pipeline [344ms, 5 completed, 3 skipped]
 ```
 
 There is a series of smaller targets (branches) that are each named like species_summary_7fe6634f7c7f6a77, then one overall `species_summary` target.
@@ -406,10 +406,10 @@ The following objects are masked from ‘package:datasets’:
     penguins, penguins_raw
 
 + combined_summary dispatched
-✔ combined_summary completed [25ms, 371 B]
+✔ combined_summary completed [24ms, 371 B]
 + species_summary declared [3 branches]
-✔ species_summary completed [22ms, 1.11 kB]
-✔ ended pipeline [349ms, 4 completed, 4 skipped]
+✔ species_summary completed [20ms, 1.11 kB]
+✔ ended pipeline [340ms, 4 completed, 4 skipped]
 ```
 
 And this time, when we load the `model_summaries`, we can tell which model corresponds to which row (the `.before = 1` in `mutate()` ensures that it shows up before the other columns).
@@ -571,16 +571,16 @@ The following objects are masked from ‘package:datasets’:
     penguins, penguins_raw
 
 + penguins_data dispatched
-✔ penguins_data completed [24ms, 1.53 kB]
+✔ penguins_data completed [23ms, 1.53 kB]
 + combined_summary dispatched
 ✔ combined_summary completed [13ms, 371 B]
 + species_summary declared [3 branches]
-✔ species_summary completed [22ms, 1.11 kB]
+✔ species_summary completed [21ms, 1.11 kB]
 + combined_predictions dispatched
 ✔ combined_predictions completed [8ms, 25.91 kB]
 + species_predictions declared [3 branches]
-✔ species_predictions completed [24ms, 27.45 kB]
-✔ ended pipeline [451ms, 9 completed, 2 skipped]
+✔ species_predictions completed [21ms, 27.45 kB]
+✔ ended pipeline [436ms, 9 completed, 2 skipped]
 ```
 
 ::::::::::::::::::::::::::::::::::::: {.callout}

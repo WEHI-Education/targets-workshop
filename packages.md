@@ -71,8 +71,8 @@ tar_plan(
 
 ``` output
 + adelie_data dispatched
-✔ adelie_data completed [21ms, 1.54 kB]
-✔ ended pipeline [131ms, 1 completed, 0 skipped]
+✔ adelie_data completed [19ms, 1.54 kB]
+✔ ended pipeline [124ms, 1 completed, 0 skipped]
 ```
 
 This method gets around the slow-downs that may sometimes be experienced with Method 1.
@@ -100,8 +100,8 @@ tar_plan(
 
 ``` output
 + adelie_data dispatched
-✔ adelie_data completed [18ms, 1.54 kB]
-✔ ended pipeline [123ms, 1 completed, 0 skipped]
+✔ adelie_data completed [19ms, 1.54 kB]
+✔ ended pipeline [122ms, 1 completed, 0 skipped]
 ```
 
 This can be more memory efficient in some cases than loading all packages, since not every target is always made during a typical run of the workflow.
@@ -127,8 +127,8 @@ tar_plan(
 
 ``` output
 + adelie_data dispatched
-✔ adelie_data completed [8ms, 1.54 kB]
-✔ ended pipeline [111ms, 1 completed, 0 skipped]
+✔ adelie_data completed [9ms, 1.54 kB]
+✔ ended pipeline [113ms, 1 completed, 0 skipped]
 ```
 
 The benefits of this approach are that the origins of all functions is explicit, so you could browse your code (for example, by looking at its source in GitHub), and immediately know where all the functions come from.
