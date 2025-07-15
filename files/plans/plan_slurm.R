@@ -1,15 +1,18 @@
+library(crew.cluster)
+library(targets)
+library(tarchetypes)
+library(palmerpenguins)
+library(broom)
+suppressPackageStartupMessages(library(tidyverse))
 
 source("R/packages.R")
 source("R/functions.R")
 
-library(crew.cluster)
 tar_option_set(
   controller = crew_controller_slurm(
     workers = 3,
-    options_cluster = crew_options_slurm(
-      script_lines = "module load R",
-      memory_gigabytes_required = 1
-    )
+    script_lines = "module load R",
+    slurm_memory_gigabytes_per_cpu = 1
   )
 )
 

@@ -8,17 +8,13 @@ source("R/functions.R")
 
 small_memory <- crew_controller_slurm(
   name = "small_memory",
-  options_cluster = crew_options_slurm(
-    script_lines = "module load R",
-    memory_gigabytes_required = 1
-  )
+  script_lines = "module load R",
+  slurm_memory_gigabytes_per_cpu = 10
 )
 big_memory <- crew_controller_slurm(
   name = "big_memory",
-  options_cluster = crew_options_slurm(
-    script_lines = "module load R",
-    memory_gigabytes_required = 2
-  )
+  script_lines = "module load R",
+  slurm_memory_gigabytes_per_cpu = 20
 )
 
 tar_option_set(
@@ -28,14 +24,14 @@ tar_option_set(
 list(
   tar_target(
     name = big_memory_task,
-    command = Sys.getenv("SLURM_MEM_PER_NODE"),
+    command = Sys.getenv("SLURM_MEM_PER_CPU"),
     resources = tar_resources(
       crew = tar_resources_crew(controller = "big_memory")
     )
   ),
   tar_target(
     name = small_memory_task,
-    command = Sys.getenv("SLURM_MEM_PER_NODE"),
+    command = Sys.getenv("SLURM_MEM_PER_CPU"),
     resources = tar_resources(
       crew = tar_resources_crew(controller = "small_memory")
     )

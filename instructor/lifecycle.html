@@ -469,7 +469,7 @@ The following objects are masked from ‘package:datasets’:
 
     penguins, penguins_raw
 
-✔ skipped pipeline [185ms, 3 skipped]</code></pre>
+✔ skipped pipeline [69ms, 3 skipped]</code></pre>
 </div>
 <p>Remember how the first time we ran the pipeline, <code>targets</code>
 printed out a list of each target as it was being built?</p>
@@ -528,8 +528,8 @@ The following objects are masked from ‘package:datasets’:
     penguins, penguins_raw
 
 + penguins_data dispatched
-✔ penguins_data completed [12ms, 1.49 kB]
-✔ ended pipeline [303ms, 1 completed, 2 skipped]</code></pre>
+✔ penguins_data completed [11ms, 1.50 kB]
+✔ ended pipeline [180ms, 1 completed, 2 skipped]</code></pre>
 </div>
 <p>What happened?</p>
 <p>This time, it skipped <code>penguins_csv_file</code> and
@@ -788,7 +788,7 @@ The following objects are masked from ‘package:datasets’:
 
     penguins, penguins_raw
 
-✔ skipped pipeline [218ms, 3 skipped]</code></pre>
+✔ skipped pipeline [92ms, 3 skipped]</code></pre>
 </div>
 <p>Let’s invalidate <code>penguins_data</code> and run it again:</p>
 <div class="codewrapper sourceCode" id="cb16">
@@ -809,8 +809,8 @@ The following objects are masked from ‘package:datasets’:
     penguins, penguins_raw
 
 + penguins_data dispatched
-✔ penguins_data completed [13ms, 1.49 kB]
-✔ ended pipeline [338ms, 1 completed, 2 skipped]</code></pre>
+✔ penguins_data completed [11ms, 1.50 kB]
+✔ ended pipeline [181ms, 1 completed, 2 skipped]</code></pre>
 </div>
 <p>If you want to reset <strong>everything</strong> and start fresh, you
 can use <code>tar_invalidate(everything())</code>
@@ -912,9 +912,9 @@ any links that you are not going to use.
   "creativeWorkStatus": "active",
   "url": "https://carpentries-incubator.github.io/targets-workshop/instructor/lifecycle.html",
   "identifier": "https://carpentries-incubator.github.io/targets-workshop/instructor/lifecycle.html",
-  "dateCreated": "2023-04-09",
+  "dateCreated": "2025-07-09",
   "dateModified": "2025-07-09",
-  "datePublished": "2025-07-09"
+  "datePublished": "2025-07-15"
 }
 
   </script><script>
